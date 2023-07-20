@@ -64,3 +64,309 @@ body.gecko .que.webwork_opaque input.questionflagimage:focus {
 /*.iswrong {background-color:red;}*/
 /*.notanswered {}*/
 /*.isclosed{ {background-color: #000; display:none;}*/
+
+
+/*for the knowl element*/
+
+.knowl {
+	display: inline;
+	border-bottom: 2px dotted #00a;
+	color: #00a;
+	cursor: pointer;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin: 0;
+	padding: 0 2px;
+}
+
+.knowl:hover,
+.knowl.active {
+	border-bottom: 2px solid #aaf;
+	background: #ddf;
+	color: #006;
+	text-decoration: none;
+}
+
+.knowl.active:hover {
+	background: #cce;
+}
+
+div > .knowl, p > .knowl {
+	position: relative;
+}
+
+.knowl-content {
+	padding: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.knowl-content h1 {
+	margin: 0 0 10px 0;
+}
+
+.knowl-content h2 {
+	margin: 0 0 5px 0;
+}
+
+.knowl-content p {
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+
+.knowl-output {
+	background: #eef;
+	border: 10px solid #ddf;
+	border-radius: 10px;
+	padding: 0;
+	margin-top: 10px;
+	margin-bottom: 0;
+	margin-right: 0;
+}
+
+.knowl-output h1, .knowl-output h2 {
+	margin: 5px 0;
+}
+
+.knowl-output h1 {
+	color: #006;
+}
+
+.knowl-output h2 {
+	color: #006;
+}
+
+.knowl-output a {
+	display: inline;
+}
+
+.knowl-error {
+	color: darkred;
+	border-bottom: 0;
+}
+
+.knowl-footer {
+	position: relative;
+	bottom: -10px;
+	font-size: x-small;
+	background: #ddf;
+	color: #555;
+	padding: 4px 0 4px 10px;
+	margin:  -10px 0 0 0;
+}
+
+.knowl-footer a {
+	color: #006;
+}
+
+.knowl-footer a:hover {
+	background: none;
+	color: #88f;
+}
+
+/* GraphTool CSS */
+
+.graphtool-container {
+	width: 400px;
+
+	@media only screen and (max-width: 600px) {
+		width: 300px;
+	}
+
+	.graphtool-graph {
+		width: 400px;
+		height: 400px;
+
+		@media only screen and (max-width: 600px) {
+			width: 300px;
+			height: 300px;
+		}
+
+		.hidden-fill-point:focus {
+			outline-offset: 5px;
+		}
+	}
+
+	.gt-toolbar-container {
+		margin: 0.5rem 0;
+		text-align: right;
+		width: 100%;
+		padding: 0;
+
+		.gt-button-div {
+			display: inline-block;
+			box-sizing: border-box;
+			height: 38px;
+		}
+
+		.gt-button {
+			box-sizing: border-box;
+			height: 34px;
+			text-align: center;
+			padding: 1px;
+			margin: 2px;
+			border-radius: 4px;
+			border: 1px solid #ccc !important;
+		}
+
+		.gt-tool-button {
+			width: 34px;
+			background-position: 0;
+
+			&:disabled {
+				box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+				outline: 0;
+				opacity: unset;
+			}
+		}
+
+		.gt-solid-dash-box {
+			display: inline-block;
+			box-sizing: border-box;
+			height: 38px;
+			padding: 0;
+			vertical-align: middle;
+
+			.gt-solid-button-div {
+				display: block;
+				height: 20px;
+			}
+
+			.gt-dashed-button-div {
+				display: block;
+				height: 18px;
+			}
+		}
+
+		.gt-solid-tool {
+			height: 16px;
+			vertical-align: top;
+			margin: 2px 2px 0 2px;
+			border-radius: 4px 4px 0 0;
+			background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/SolidTool.svg');
+		}
+
+		.gt-dashed-tool {
+			height: 16px;
+			vertical-align: top;
+			margin: 0 2px 2px 2px;
+			border-radius: 0 0 4px 4px;
+			background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/DashTool.svg');
+		}
+
+		.gt-tool-button {
+			&.gt-select-tool {
+				background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/SelectTool.svg');
+			}
+
+			&.gt-point-tool {
+				background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/PointTool.svg');
+			}
+
+			&.gt-line-tool {
+				background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/LineTool.svg');
+			}
+
+			&.gt-circle-tool {
+				background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/CircleTool.svg');
+			}
+
+			&.gt-vertical-parabola-tool {
+				background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/VerticalParabolaTool.svg');
+			}
+
+			&.gt-horizontal-parabola-tool {
+				background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/HorizontalParabolaTool.svg');
+			}
+
+			&.gt-quadratic-tool {
+				background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/QuadraticTool.svg');
+			}
+
+			&.gt-cubic-tool {
+				background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/CubicTool.svg');
+			}
+
+			&.gt-fill-tool {
+				background-image: url('/question/type/webwork_opaque/amd/src/GraphTool/images/FillTool.svg');
+			}
+		}
+	}
+}
+
+.graphtool-answer-container {
+	width: 100%;
+
+	.graphtool-graph {
+		margin: auto;
+		width: 200px;
+		height: 200px;
+
+		@media only screen and (max-width: 600px) {
+			width: 150px;
+			height: 150px;
+		}
+	}
+}
+
+.gt-modal {
+	h3 {
+		margin: 0;
+		font-size: 1.2rem;
+	}
+}
+
+/* MathView CSS */
+
+.mv-container .popover {
+	width : 400px;
+	max-width : 400px;
+	max-height: 400px;
+}
+
+.mv-container .popover .mviewer {
+	height : 60px;
+}
+
+.mv-container .popover .tab-content {
+	height: 145px;
+	margin-top: 20px;
+}
+
+.mv-container .popover .tab-content .mvspan3 {
+	width: 87px;
+}
+
+.mv-container .popover .tab-content .mvthumbnail {
+	box-sizing: content-box;
+	padding: 12px;
+	height: 22px;
+	cursor: pointer;
+	display: block;
+	line-height: 20px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+	transition: all 0.2s ease-in-out;
+}
+
+.mv-container .popover a.mvthumbnail:hover,
+.mv-container .popover a.mvthumbnail:focus {
+	border-color: var(--bs-primary, #038);
+	box-shadow: 0 1px 4px var(--bs-primary, #038);
+}
+
+.mv-container .popover .mvinput {
+	height: 22px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.mv-container .popover .mvinput a {
+	float: right;
+}
+
+.mv-container .popover .navbar .navbar-brand {
+	font-size: 20px;
+	font-weight: 200;
+	color: #555555;
+} 

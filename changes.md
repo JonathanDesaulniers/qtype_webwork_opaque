@@ -1,5 +1,12 @@
 # Change log for the The Opaque question type
 
+## Change in V1.1.1
+
+*Plugin is now working only with WeBWorK 2.17+
+*Added MathView editor to WeBWorK problem
+*Added use of graphtool problem
+*Fix error with UTF8 with solution in moodle feedback
+
 ## Changes in V1.0.0
 
 * Name of plugin is changed to strictly be used with WeBWorK and not interfer with qtype_opaque

@@ -35,7 +35,11 @@ define("qtype_webwork_opaque/init_mathjax", ["jquery"], function(a) {
 							console.log ("loading mathjax");
 						}
 						else {
-							MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+							if (MathJax.startup == undefined) {
+								MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+							} else {
+								
+							}							
 						}						
 					};
 					

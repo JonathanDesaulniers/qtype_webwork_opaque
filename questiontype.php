@@ -85,11 +85,19 @@ class qtype_webwork_opaque extends question_type {
         $question->exammode = $questiondata->options->exammode;
         if ($this->jsready) {
             $this->jsready = false;
-            $PAGE->requires->js_call_amd('qtype_webwork_opaque/changefocus', 'init');
+	 /*   $PAGE->requires->js_call_amd('qtype_webwork_opaque/jquery-nestable'); 
+	    $PAGE->requires->js_call_amd('qtype_webwork_opaque/dragndrop'); */
             $PAGE->requires->js_call_amd('qtype_webwork_opaque/init_mathjax', 'init');
-            $PAGE->requires->js_call_amd('qtype_webwork_opaque/knowl'); 
-            $PAGE->requires->js_call_amd('qtype_webwork_opaque/Base64', 'init');
-	    $PAGE->requires->js_call_amd('qtype_webwork_opaque/multipart', 'init');
+            $PAGE->requires->js_call_amd('qtype_webwork_opaque/knowl', 'init');
+	    $PAGE->requires->js_call_amd('qtype_webwork_opaque/mv_locale_fr', 'init');
+	    $PAGE->requires->js_call_amd('qtype_webwork_opaque/mathview', 'init');
+	    $PAGE->requires->js('/question/type/webwork_opaque/amd/src/jquery-3.6.4.min.js', true);
+	/*    $PAGE->requires->js('/question/type/webwork_opaque/amd/src/bootstrap.bundle.js', true); */
+	    $PAGE->requires->js('/question/type/webwork_opaque/amd/src/jsxgraphcore.js', true);
+	    $PAGE->requires->js('/question/type/webwork_opaque/amd/src/GraphTool/graphtool.js', true); 
+	    $PAGE->requires->js('/question/type/webwork_opaque/amd/src/GraphTool/cubictool.js', true);  
+	    $PAGE->requires->js('/question/type/webwork_opaque/amd/src/GraphTool/pointtool.js', true);
+	    $PAGE->requires->js('/question/type/webwork_opaque/amd/src/GraphTool/quadratictool.js', true); 
         }
     }
 

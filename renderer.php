@@ -39,7 +39,7 @@ class qtype_webwork_opaque_renderer extends qtype_renderer {
 		if (!empty($opaquestate->get_solfeedback()) && !empty($opaquestate->get_correctanstable())){
 			$sol = $opaquestate->get_solfeedback();
 		    $doc = new DOMDocument();
-			$doc->loadHTML($sol);
+			$doc->loadHTML('<?xml version="1.0" encoding="UTF-8"?>' . "\n" . $sol);
 			$xpath = new DOMXPath($doc);
 			$tags = $xpath->query('.//a');
 			$result = "";
@@ -47,7 +47,7 @@ class qtype_webwork_opaque_renderer extends qtype_renderer {
 				$domDocument = new DOMDocument();
 				$b = $domDocument->importNode($node->cloneNode(true), true);
 				$domDocument->appendChild($b);
-				$result .= $domDocument->saveHtml();
+				$result .= $domDocument->saveHtml($dom->documentElement);
 			
 			}
 			$table = $opaquestate->get_correctanstable();
@@ -59,7 +59,7 @@ class qtype_webwork_opaque_renderer extends qtype_renderer {
 		if (!empty($opaquestate->get_solfeedback()) && empty($opaquestate->get_correctanstable())){
 			$sol = $opaquestate->get_solfeedback();
 		    $doc = new DOMDocument();
-			$doc->loadHTML($sol);
+			$doc->loadHTML('<?xml version="1.0" encoding="UTF-8"?>' . "\n" . $sol);
 			$xpath = new DOMXPath($doc);
 			$tags = $xpath->query('.//a');
 			$result = "";
@@ -67,7 +67,7 @@ class qtype_webwork_opaque_renderer extends qtype_renderer {
 				$domDocument = new DOMDocument();
 				$b = $domDocument->importNode($node->cloneNode(true), true);
 				$domDocument->appendChild($b);
-				$result .= $domDocument->saveHtml();
+				$result .= $domDocument->saveHtml($dom->documentElement);
 			}
 			return $result;
 		}
